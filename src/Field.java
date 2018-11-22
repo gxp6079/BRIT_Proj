@@ -8,4 +8,17 @@ public class Field {
         this.lines = lines;
         this.cols = cols;
     }
+
+    public ArrayList getCols() {
+        return cols;
+    }
+
+    public ArrayList getLines() {
+        return lines;
+    }
+
+    public void addNew(int line, int col){
+        lines.add(line);
+        cols.add(col);
+    }
 }
