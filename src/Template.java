@@ -18,10 +18,10 @@ public class Template {
      * Method: create_Field
      * This method finds every occurrence of the field_value and assigns it to a new Field
      * @param filename
-     * @param field_value
+     * @param fields_map
      * @return Field
      */
-    public Field create_Field(String filename, String field_value){
+    public Field create_Fields(String filename, Map<String, String> fields_map){
         return null;
     }
 
@@ -29,12 +29,9 @@ public class Template {
      * Method: find
      * This method finds and returns the field value according to previous file locations
      * @param filename
-     * @param field_name
      * @return field_value
      */
-    public String find(String filename, String field_name){
-        return null;
-    }
+    public void create_Entry(String filename){}
 
     /**
      * Method: fix
@@ -47,10 +44,4 @@ public class Template {
     public void fix(String filename, String field_name, String field_value){
     }
 
-    /**
-    Method: sendTo_DB
-    This method send found field values to database after validated
-     */
-    public void sendToDB(){
-    }
 }
