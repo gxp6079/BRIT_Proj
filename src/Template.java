@@ -41,7 +41,7 @@ public class Template {
      * @param field_name
      * @param field_value
      */
-    public void fix(String filename, String field_name, String field_value){
+    public void updateField(String filename, String field_name, String field_value){
     }
 
 }
