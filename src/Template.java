@@ -1,4 +1,10 @@
 
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.text.PDFTextStripper;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Map;
 
 public class Template {
@@ -12,6 +18,7 @@ public class Template {
      * @param fields_map
      */
     public Template(String filename, Map<String, String> fields_map){
+        create_Fields(filename, fields_map);
     }
 
     /**
@@ -22,6 +29,26 @@ public class Template {
      * @return Field
      */
     public Field create_Fields(String filename, Map<String, String> fields_map){
+        File file =  new File(filename);
+        String text;
+        try {
+            PDDocument document = PDDocument.load(file);
+            PDFTextStripper pdfStripper = new PDFTextStripper();
+            text = pdfStripper.getText(document);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+        String[] rows = text.split("\n");
+        ArrayList strings = new ArrayList();
+        for(int i = 0 ; i < rows.length ; i++){
+            String row = rows[i];
+            strings[i] = row.split(" ");
+        }
+        for(String field_name : fields_map.keySet()){
+
+        }
         return null;
     }
 
