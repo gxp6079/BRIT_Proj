@@ -29,25 +29,9 @@ public class Template {
      * @return Field
      */
     public Field create_Fields(String filename, Map<String, String> fields_map){
-        File file =  new File(filename);
-        String text;
-        try {
-            PDDocument document = PDDocument.load(file);
-            PDFTextStripper pdfStripper = new PDFTextStripper();
-            text = pdfStripper.getText(document);
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
-        String[] rows = text.split("\n");
-        ArrayList strings = new ArrayList();
-        for(int i = 0 ; i < rows.length ; i++){
-            String row = rows[i];
-            strings[i] = row.split(" ");
-        }
         for(String field_name : fields_map.keySet()){
-
+            Field field = new Field(field_name, filename ,fields_map.get(field_name));
+            fields.put(field_name, field);
         }
         return null;
     }
