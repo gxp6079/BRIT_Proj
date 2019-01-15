@@ -43,7 +43,7 @@ public class Field {
         }
         for(int row = 0 ; row < rows.length ; row ++){
             for(int col = 0 ; col < strings.size() ; col ++){
-                if(strings.get(col)[row] == value)){
+                if(strings.get(col)[row] == value){
                     getCols().add(col);
                     getLines().add(row);
                 }

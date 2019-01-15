@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Scanner;
+
 public class Main {
     /**
      * load templates from file
@@ -16,5 +19,17 @@ public class Main {
      *      make new template
      *      send to DB
      */
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Insira o nome do document: ");
+        String filename;
+        filename = scan.next();
+        System.out.println("Insira o numero da conta: ");
+        String conta;
+        conta = scan.next();
+        HashMap<String, String> field_map = new HashMap<>();
+        field_map.put("conta", conta);
+        Template template = new Template(filename, field_map);
+    }
 
 }
